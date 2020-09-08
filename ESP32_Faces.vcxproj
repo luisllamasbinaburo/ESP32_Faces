@@ -142,9 +142,6 @@
     <ClInclude Include="Face.h">
       <FileType>CppCode</FileType>
     </ClInclude>
-    <ClInclude Include="FaceAnimation.h">
-      <FileType>CppCode</FileType>
-    </ClInclude>
     <ClInclude Include="FaceBehavior.h">
       <FileType>CppCode</FileType>
     </ClInclude>
@@ -166,7 +163,6 @@
     <ClCompile Include="EyeTransition.cpp" />
     <ClCompile Include="EyeVariation.cpp" />
     <ClCompile Include="Face.cpp" />
-    <ClCompile Include="FaceAnimation.cpp" />
     <ClCompile Include="FaceBehavior.cpp" />
     <ClCompile Include="FaceExpression.cpp" />
     <ClCompile Include="LookAssistant.cpp" />

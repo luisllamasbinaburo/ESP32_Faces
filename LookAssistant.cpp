@@ -14,7 +14,7 @@ You should have received a copy of the GNU Affero General Public License along w
 #include "Face.h"
 #include "EyeTransformation.h"
 
-LookAssistant::LookAssistant(Face& face) : _face(face), Timer(4000000)
+LookAssistant::LookAssistant(Face& face) : _face(face), Timer(4000)
 {
 	Timer.Start();
 }

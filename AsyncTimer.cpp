@@ -12,23 +12,13 @@ You should have received a copy of the GNU Affero General Public License along w
 
 #include "AsyncTimer.h"
 
-AsyncTimer::AsyncTimer(unsigned long microsInterval) : AsyncTimer(microsInterval, false, nullptr)
+AsyncTimer::AsyncTimer(unsigned long millisInterval) : AsyncTimer(millisInterval, nullptr)
 {
 }
 
-AsyncTimer::AsyncTimer(unsigned long microsInterval, AsyncTimerCallback onFinish) : AsyncTimer(microsInterval, false, onFinish)
+AsyncTimer::AsyncTimer(unsigned long millisInterval, AsyncTimerCallback onFinish)
 {
-
-}
-
-AsyncTimer::AsyncTimer(unsigned long microsInterval, bool autoReset) : AsyncTimer(microsInterval, false, nullptr)
-{
-}
-
-AsyncTimer::AsyncTimer(unsigned long microsInterval, bool autoReset, AsyncTimerCallback onFinish)
-{
-	Interval = microsInterval;
-	AutoReset = autoReset;
+	Interval = millisInterval;
 	OnFinish = onFinish;
 }
 
@@ -40,7 +30,7 @@ void AsyncTimer::Start()
 
 void AsyncTimer::Reset()
 {
-	_startTime = micros();
+	_startTime = millis();
 }
 
 void AsyncTimer::Stop()
@@ -53,7 +43,7 @@ bool AsyncTimer::Update()
 	if (_isActive == false) return false;
 
 	_isExpired = false;
-	if (static_cast<unsigned long>(micros() - _startTime) >= Interval)
+	if (static_cast<unsigned long>(millis() - _startTime) >= Interval)
 	{
 		_isExpired = true;
 		if (OnFinish != nullptr) OnFinish();
@@ -63,11 +53,6 @@ bool AsyncTimer::Update()
 }
 
 void AsyncTimer::SetIntervalMillis(unsigned long interval)
-{
-	Interval = 1000 * interval;
-}
-
-void AsyncTimer::SetIntervalMicros(unsigned long interval)
 {
 	Interval = interval;
 }
@@ -79,12 +64,12 @@ unsigned long AsyncTimer::GetStartTime()
 
 unsigned long AsyncTimer::GetElapsedTime()
 {
-	return micros() - _startTime;
+	return millis() - _startTime;
 }
 
 unsigned long AsyncTimer::GetRemainingTime()
 {
-	return Interval - micros() + _startTime;
+	return Interval - millis() + _startTime;
 }
 
 bool AsyncTimer::IsActive() const

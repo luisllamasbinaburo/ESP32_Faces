@@ -24,11 +24,8 @@ typedef void(*AsyncTimerCallback)();
 class AsyncTimer
 {
  public:
-	AsyncTimer(unsigned long microsInterval);
-	AsyncTimer(unsigned long microsInterval, AsyncTimerCallback OnFinish);
-
-	AsyncTimer(unsigned long microsInterval, bool autoReset);
-	AsyncTimer(unsigned long microsInterval, bool autoReset, AsyncTimerCallback OnFinish);
+	AsyncTimer(unsigned long millisInterval);
+	AsyncTimer(unsigned long millisInterval, AsyncTimerCallback OnFinish);
 
 	void Start();
 	void Reset();
@@ -36,7 +33,6 @@ class AsyncTimer
 	bool Update();
 
 	void SetIntervalMillis(unsigned long interval);
-	void SetIntervalMicros(unsigned long interval);
 	
 	unsigned long GetStartTime();
 	unsigned long GetElapsedTime();
@@ -46,7 +42,6 @@ class AsyncTimer
 	bool IsExpired() const;
 	
 	unsigned long Interval;
-	bool AutoReset;
 	
 	AsyncTimerCallback OnFinish;
 

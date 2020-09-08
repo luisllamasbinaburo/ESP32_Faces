@@ -13,13 +13,16 @@ You should have received a copy of the GNU Affero General Public License along w
 #include "BlinkAssistant.h"
 #include "Face.h"
 
-BlinkAssistant::BlinkAssistant(Face& face) : _face(face), BlinkTrigger(3500)
+BlinkAssistant::BlinkAssistant(Face& face) : _face(face), Timer(3500)
 {
+	Timer.Start();
 }
 
 void BlinkAssistant::Update()
 {
-	if (BlinkTrigger.GetValue() == 1.0)
+	Timer.Update();
+
+	if (Timer.IsExpired())
 	{
 		Blink();
 	}
@@ -29,5 +32,5 @@ void BlinkAssistant::Blink()
 {
 	_face.LeftEye.BlinkTransformation.Animation.Restart();
 	_face.RightEye.BlinkTransformation.Animation.Restart();
-	BlinkTrigger.Restart();
+	Timer.Reset();
 }

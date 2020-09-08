@@ -14,10 +14,11 @@ You should have received a copy of the GNU Affero General Public License along w
 #include "FaceBehavior.h"
 #include "FaceEmotions.hpp"
 
-FaceBehavior::FaceBehavior(Face& face) : _face(face), Timer(50000)
+FaceBehavior::FaceBehavior(Face& face) : _face(face), Timer(500)
 {
+	Timer.Start();
 	Clear();
-	Emotions[(int)eEmotions::Normal] = 1.0;
+	Emotions[(int)eEmotions::Normal] = 2.0;
 	Emotions[(int)eEmotions::Happy] = 1.0;
 }
 

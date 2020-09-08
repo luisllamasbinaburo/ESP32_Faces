@@ -20,6 +20,7 @@ You should have received a copy of the GNU Affero General Public License along w
 #endif
 
 #include "Animations.h"
+#include "AsyncTimer.h"
 
 class Face;
 
@@ -33,7 +34,7 @@ class BlinkAssistant
 
 	Face&  _face;
 
-	DeltaAnimation BlinkTrigger;
+	AsyncTimer Timer;
 
 	void Update();
 	void Blink();
