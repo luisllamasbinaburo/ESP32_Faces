@@ -38,7 +38,6 @@ class LookAssistant
 
 	AsyncTimer Timer;
 
-
 	void LookAt(float x, float y);
 	void Update();
 

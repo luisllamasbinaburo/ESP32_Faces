@@ -54,9 +54,9 @@ public:
 	Eye LeftEye;
 
 	BlinkAssistant Blink;
+	LookAssistant Look;
 	FaceExpression Expression;
 	FaceBehavior Behavior;
-	LookAssistant Look;
 
 	void Update();
 

@@ -14,7 +14,7 @@ You should have received a copy of the GNU Affero General Public License along w
 #include "FaceBehavior.h"
 #include "FaceEmotions.hpp"
 
-FaceBehavior::FaceBehavior(Face& face) : _face(face), Timer(5000000)
+FaceBehavior::FaceBehavior(Face& face) : _face(face), Timer(50000)
 {
 	Clear();
 	Emotions[(int)eEmotions::Normal] = 1.0;
