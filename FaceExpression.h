@@ -23,10 +23,11 @@ class Face;
 
 class FaceExpression
 {
+protected:
+	Face&  _face;
+
 public:
 	FaceExpression(Face& face);
-
-	Face&  _face;
 
 	void ClearVariations();
 

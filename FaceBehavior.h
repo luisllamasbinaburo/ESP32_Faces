@@ -27,12 +27,10 @@ class Face;
 class FaceBehavior
 {
  protected:
-
+	Face&  _face;
 
  public:
 	FaceBehavior(Face& face);
-
-	Face&  _face;
 
 	eEmotions CurrentEmotion;
 

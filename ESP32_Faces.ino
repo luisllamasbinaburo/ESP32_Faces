@@ -22,16 +22,6 @@ TFT_eSprite Buffer = TFT_eSprite(&M5.Lcd);
 
 Face face(Buffer, HEIGHT, WIDTH, EYE);
 
-
-float accX = 0;
-float accY = 0;
-float accZ = 0;
-
-float gyroX = 0;
-float gyroY = 0;
-float gyroZ = 0;
-
-
 void setup(void) {
 	Serial.begin(115200);
 	M5.begin();
@@ -45,7 +35,7 @@ void setup(void) {
 	Buffer.createSprite(WIDTH, HEIGHT);
 
 	face.Expression.GoTo_Normal();
-	
+
 	face.Behavior.Clear();
 	face.Behavior.SetEmotion(eEmotions::Normal, 1.0);
 
@@ -53,24 +43,32 @@ void setup(void) {
 }
 
 void loop() {
-	M5.MPU6886.getGyroData(&gyroX, &gyroY, &gyroZ);
+	float accX = 0;
+	float accY = 0;
+	float accZ = 0;
 	M5.MPU6886.getAccelData(&accX, &accY, &accZ);
 
-	if (accY > 0.5)
+	if (accZ > 0.8 || accZ < -0.8)
+	{
+		face.Behavior.Clear();
+		face.Behavior.SetEmotion(eEmotions::Sad, 1.0);
+	}
+	else if (accY > 0.8)
 	{
 		face.Behavior.Clear();
 		face.Behavior.SetEmotion(eEmotions::Angry, 1.0);
 	}
-	else if (accY < -0.5)
+	else if (accY < -0.8)
 	{
 		face.Behavior.Clear();
 		face.Behavior.SetEmotion(eEmotions::Furious, 1.0);
-		
+
 	}
 	else
 	{
 		face.Behavior.Clear();
-		face.Behavior.SetEmotion(eEmotions::Normal, 1.0);
+		face.Behavior.SetEmotion(eEmotions::Normal, 2.0);
+		face.Behavior.SetEmotion(eEmotions::Happy, 1.0);
 	}
 
 	face.Update();

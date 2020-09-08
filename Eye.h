@@ -34,13 +34,14 @@ class Face;
 class Eye
 {
 protected:
+	Face& _face;
+
 	void Update();
 	void ChainOperators();
 
 public:
 	Eye(Face& face);
 
-	Face& _face;
 
 	uint32_t Foreground;
 	uint32_t Background;

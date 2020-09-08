@@ -27,12 +27,10 @@ class Face;
 class BlinkAssistant
 {
  protected:
-
+	Face&  _face;
 
  public:
 	BlinkAssistant(Face& face);
-
-	Face&  _face;
 
 	AsyncTimer Timer;
 

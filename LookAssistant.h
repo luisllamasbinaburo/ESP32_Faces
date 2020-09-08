@@ -27,12 +27,10 @@ class Face;
 class LookAssistant
 {
  protected:
-
+	Face&  _face;
 
  public:
 	LookAssistant(Face& face);
-
-	Face&  _face;
 
 	Transformation transformation;
 
@@ -40,7 +38,6 @@ class LookAssistant
 
 	void LookAt(float x, float y);
 	void Update();
-
 };
 
 #endif
