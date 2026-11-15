@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" width="720" height="330" font-family="Segoe UI, Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="720" height="330" rx="16" fill="#ffffff"/>
+
+  <!-- ESP32 board -->
+  <rect x="40" y="40" width="220" height="250" rx="10" fill="#1f2937"/>
+  <rect x="95" y="62" width="110" height="78" rx="4" fill="#9ca3af"/>
+  <text x="150" y="107" font-size="15" font-weight="600" fill="#111827" text-anchor="middle">ESP32</text>
+  <text x="150" y="275" font-size="12" fill="#9ca3af" text-anchor="middle">DevKit</text>
+
+  <g font-size="13" fill="#e5e7eb" text-anchor="end">
+    <text x="228" y="170">3V3</text>
+    <text x="228" y="200">GND</text>
+    <text x="228" y="230">GPIO 21</text>
+    <text x="228" y="260">GPIO 22</text>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="246" cy="166" r="5"/>
+    <circle cx="246" cy="196" r="5"/>
+    <circle cx="246" cy="226" r="5"/>
+    <circle cx="246" cy="256" r="5"/>
+  </g>
+
+  <!-- OLED module -->
+  <rect x="460" y="40" width="220" height="210" rx="10" fill="#1e3a8a"/>
+  <rect x="482" y="60" width="176" height="96" rx="3" fill="#000000"/>
+  <!-- tiny eyes -->
+  <rect x="520" y="86" width="40" height="40" rx="8" fill="#ffffff"/>
+  <rect x="580" y="86" width="40" height="40" rx="8" fill="#ffffff"/>
+  <text x="570" y="180" font-size="12" fill="#bfdbfe" text-anchor="middle">SSD1306 128x64 I2C</text>
+
+  <g font-size="13" fill="#e5e7eb">
+    <text x="498" y="214">VCC</text>
+    <text x="538" y="214">GND</text>
+    <text x="580" y="214">SDA</text>
+    <text x="620" y="214">SCL</text>
+  </g>
+  <g fill="#fbbf24">
+    <circle cx="510" cy="228" r="5"/>
+    <circle cx="550" cy="228" r="5"/>
+    <circle cx="592" cy="228" r="5"/>
+    <circle cx="632" cy="228" r="5"/>
+  </g>
+
+  <!-- Wires -->
+  <g fill="none" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M251 166 H330 V300 H510 V233" stroke="#dc2626"/>
+    <path d="M251 196 H345 V290 H550 V233" stroke="#111827"/>
+    <path d="M251 226 H360 V280 H592 V233" stroke="#2563eb"/>
+    <path d="M251 256 H375 V270 H632 V233" stroke="#16a34a"/>
+  </g>
+
+  <g font-size="12" fill="#374151">
+    <text x="360" y="24" text-anchor="middle" font-weight="600">I2C wiring</text>
+  </g>
+</svg>
