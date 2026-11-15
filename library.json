@@ -1,0 +1,23 @@
+{
+  "name": "ESP32_Faces",
+  "version": "2.0.0",
+  "description": "Expressive animated robot eyes for ESP32, ESP8266 and Arduino displays. 18 emotions, blinking, looking around. OLED and TFT.",
+  "keywords": "eyes, face, emotions, robot, animation, oled, tft, ssd1306, m5stack, esp32",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luisllamasbinaburo/ESP32_Faces.git"
+  },
+  "authors": [
+    {
+      "name": "Luis Llamas",
+      "url": "https://www.luisllamas.es",
+      "maintainer": true
+    }
+  ],
+  "homepage": "https://github.com/luisllamasbinaburo/ESP32_Faces",
+  "frameworks": "arduino",
+  "platforms": "*",
+  "export": {
+    "exclude": ["tools", "docs"]
+  }
+}
